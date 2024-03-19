@@ -3,6 +3,9 @@
 
     <menu id="application" title="msg://com.company.test_indorsoft/menu.application.title" opened="true">
         <item view="User.list" title="msg://com.company.test_indorsoft.view.user/UserListView.title"/>
+        <item view="Task_.list" title="msg://com.company.test_indorsoft.view.task/taskListView.title"/>
+        <item view="Employee.list" title="msg://com.company.test_indorsoft.view.employee/employeeListView.title"/>
     </menu>
+
 
 </menu-config>

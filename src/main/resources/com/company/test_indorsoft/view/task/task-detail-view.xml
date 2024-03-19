@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://taskDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="taskDc"
+                  class="com.company.test_indorsoft.entity.Task">
+            <fetchPlan extends="_base">
+                <property name="employers" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="employersDc" property="employers"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="taskDc">
+            <textField id="nameField" property="name"/>
+        </formLayout>
+        <h4 text="msg://com.company.test_indorsoft.entity/Task.employers"/>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button action="employersDataGrid.create"/>
+            <button action="employersDataGrid.remove"/>
+        </hbox>
+        <dataGrid id="employersDataGrid" dataContainer="employersDc" width="100%" minHeight="20em">
+            <actions>
+                <action id="create" type="list_create">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="remove" type="list_remove"/>
+            </actions>
+            <columns>
+            </columns>
+        </dataGrid>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

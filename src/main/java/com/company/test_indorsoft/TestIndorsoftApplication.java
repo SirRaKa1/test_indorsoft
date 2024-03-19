@@ -5,6 +5,7 @@ import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+import io.jmix.core.repository.EnableJmixDataRepositories;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,7 @@ import javax.sql.DataSource;
 @Theme(value = "test_indorsoft")
 @PWA(name = "Test_indorsoft", shortName = "Test_indorsoft")
 @SpringBootApplication
+@EnableJmixDataRepositories
 public class TestIndorsoftApplication implements AppShellConfigurator {
 
     @Autowired
