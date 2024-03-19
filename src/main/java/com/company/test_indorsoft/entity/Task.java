@@ -25,14 +25,14 @@ public class Task {
             joinColumns = @JoinColumn(name = "TASK_ID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID"))
     @ManyToMany
-    private Set<Employee> employers;
+    private Set<Employee> employees;
 
-    public Set<Employee> getEmployers() {
-        return employers;
+    public Set<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setEmployers(Set<Employee> employers) {
-        this.employers = employers;
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 
     public String getName() {

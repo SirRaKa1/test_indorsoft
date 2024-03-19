@@ -1,6 +1,7 @@
 package com.company.test_indorsoft.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 
@@ -16,6 +17,7 @@ public class Employee {
     @Id
     private UUID id;
 
+    @InstanceName
     @Column(name = "FULL_NAME")
     private String fullName;
 
